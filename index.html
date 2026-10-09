@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Notas</title>
+  <script type="module" src="/src/main.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 720px; margin: 30px auto; padding: 0 16px; }
+    h1 { font-size: 1.4rem; }
+    nav button { padding: 8px 16px; margin-right: 8px; cursor: pointer; }
+    nav button.activo { font-weight: bold; text-decoration: underline; }
+    section { display: none; border: 1px solid #ccc; border-radius: 6px; padding: 16px; margin-top: 16px; }
+    section.activa { display: block; }
+    label { display: block; margin-top: 10px; font-size: 0.9rem; }
+    input { width: 100%; padding: 6px; box-sizing: border-box; }
+    button.accion { margin-top: 14px; margin-right: 8px; padding: 8px 14px; cursor: pointer; }
+    #resultadoProfesor, #resultadoEstudiante { background: #f5f5f5; padding: 10px; margin-top: 14px; white-space: pre-wrap; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <h1>Registro de notas</h1>
+
+  <nav>
+    <button id="tabProfesor" class="activo">Profesor</button>
+    <button id="tabEstudiante">Estudiante</button>
+  </nav>
+
+  <!-- Panel Profesor: CRUD completo -->
+  <section id="panelProfesor" class="activa">
+    <h2>Panel del profesor</h2>
+
+    <label for="notaId">ID de la nota (para consultar, modificar o eliminar):</label>
+    <input type="number" id="notaId" placeholder="Ej: 1" />
+
+    <label for="estudianteId">ID del estudiante:</label>
+    <input type="number" id="estudianteId" placeholder="Ej: 1" />
+
+    <label for="estudianteNombre">Nombre del estudiante:</label>
+    <input type="text" id="estudianteNombre" placeholder="Ej: Carlos" />
+
+    <label for="materia">Materia:</label>
+    <input type="text" id="materia" placeholder="Ej: Matemáticas" />
+
+    <label for="notaValor">Nota (0 a 5):</label>
+    <input type="number" id="notaValor" min="0" max="5" step="0.1" placeholder="Ej: 4.5" />
+
+    <div>
+      <button class="accion" id="btnListar">Listar todas</button>
+      <button class="accion" id="btnConsultar">Consultar por ID</button>
+      <button class="accion" id="btnCrear">Crear</button>
+      <button class="accion" id="btnModificar">Modificar</button>
+      <button class="accion" id="btnEliminar">Eliminar</button>
+    </div>
+
+    <div id="resultadoProfesor">Resultados...</div>
+  </section>
+
+  <!-- Panel Estudiante: solo consulta -->
+  <section id="panelEstudiante">
+    <h2>Panel del estudiante</h2>
+
+    <label for="consultaEstudianteId">Tu ID de estudiante:</label>
+    <input type="number" id="consultaEstudianteId" placeholder="Ej: 1" />
+
+    <button class="accion" id="btnConsultarNotas">Consultar mis notas</button>
+
+    <div id="resultadoEstudiante">Resultados...</div>
+  </section>
+
+</body>
+</html>

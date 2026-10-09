@@ -1,0 +1,17 @@
+{
+  "name": "registro-notas",
+  "version": "1.0.0",
+  "description": "Registro de notas por parte de profesores y consulta de notas de estudiantes (modelo simulado)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
